@@ -13,24 +13,24 @@ import Register from './Component/Register/Register';
 
 const app = new clarifai.App({ apiKey: 'dbd83ed35798494a8c291658985c8e4b' });
 
-
+const initialstate={
+  input: '',
+  imageURL: '',
+  box: {},
+  route: 'signin',
+  user: {
+    id: "",
+    name: "",
+    email: "",
+    entries: 0,
+    joined: ""
+  }
+}
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      input: '',
-      imageURL: '',
-      box: {},
-      route: 'signin',
-      user: {
-        id: "",
-        name: "",
-        email: "",
-        entries: 0,
-        joined: ""
-      }
-    }
+    this.state = initialstate;
   }
 
   loaduser = (data) => {
@@ -46,7 +46,10 @@ class App extends React.Component {
   }
 
   onroutechange = (route) => {
-    this.setState({ route: route });
+    if(route==='signout'){this.setState(initialstate)}
+    else{
+      this.setState({ route: route });
+    }
   }
 
 

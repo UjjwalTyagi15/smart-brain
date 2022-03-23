@@ -19,7 +19,7 @@ const Navigation = ({route ,onroutechange}) => {
     else{
         return (
             <nav >
-                <p onClick={()=>onroutechange('signin')} className="f3 link dim black underline pointer pa3 " >Sign Out </p>
+                <p onClick={()=>onroutechange('signout')} className="f3 link dim black underline pointer pa3 " >Sign Out </p>
             </nav>
         );
     }

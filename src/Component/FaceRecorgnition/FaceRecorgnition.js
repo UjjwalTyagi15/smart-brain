@@ -3,7 +3,7 @@ import './FaceRecorgnition.css'
 
 const FaceRecorgnition= ({box ,imageURL} )=>{
 
-    console.log(box);
+    
    
     return (
         <div className="centre ma">
