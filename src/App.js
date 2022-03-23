@@ -81,7 +81,7 @@ class App extends React.Component {
     app.models.predict(clarifai.FACE_DETECT_MODEL, this.state.input)
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('https://murmuring-sierra-64215.herokuapp.com/image', {
             method: 'put',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
