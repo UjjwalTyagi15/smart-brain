@@ -27,7 +27,9 @@ class Register extends React.Component{
 
 
   onregister=()=>{
-    fetch('https://murmuring-sierra-64215.herokuapp.com/register',{
+    if(this.state.name.length!==0&& this.state.email.length && this.state.password.length){
+
+      fetch('https://murmuring-sierra-64215.herokuapp.com/register',{
         method:'post',
         headers:{'Content-type':'application/json'},
         body:JSON.stringify({
@@ -38,11 +40,12 @@ class Register extends React.Component{
       }).then(Response=>Response.json())
       .then(user=>{
         if(user){
-        this.props.loaduser(user);  
-        this.props.onroutechange('home');}
-      })
-  }
-
+          this.props.loaduser(user);  
+          this.props.onroutechange('home');}
+        })
+      }
+    }
+      
   
   render(){
   return (
